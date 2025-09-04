@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Smart Budget Planner</title>
+  <link rel="stylesheet" href="exp6.css">
+</head>
+<body>
+  <div class="wrapper">
+    <h1 id="appTitle">Smart Budget Planner</h1>
+    
+    <form id="budgetForm" aria-labelledby="appTitle" novalidate>
+      <label for="amount">Enter Total Amount</label>
+      <input id="amount" name="amount" type="number" step="any" min="0" aria-required="true" placeholder="e.g. 20000">
+
+      <div class="grid">
+        <div>
+          <label for="rent">Room Rent (%)</label>
+          <input id="rent" name="rent" type="number" step="any" min="0" max="100" aria-required="true" placeholder="e.g. 35">
+        </div>
+        <div>
+          <label for="accessories">Accessories (%)</label>
+          <input id="accessories" name="accessories" type="number" step="any" min="0" max="100" aria-required="true" placeholder="e.g. 15">
+        </div>
+        <div>
+          <label for="emergency">Emergency (%)</label>
+          <input id="emergency" name="emergency" type="number" step="any" min="0" max="100" aria-required="true" placeholder="e.g. 20">
+        </div>
+        <div>
+          <label for="saving">Saving (%)</label>
+          <input id="saving" name="saving" type="number" step="any" min="0" max="100" aria-required="true" placeholder="e.g. 30">
+        </div>
+      </div>
+
+      <button id="evaluate" type="submit" aria-label="Evaluate my budget breakdown">
+        Evaluate My Money
+      </button>
+    </form>
+
+    <h2>Your Budget Breakdown</h2>
+
+    <div class="results" role="region" aria-live="polite" aria-atomic="true">
+      <div class="card rent" id="rentBox" tabindex="0">Room Rent<br><span class="amount">Rs.0.00</span></div>
+      <div class="card acc" id="accBox" tabindex="0">Accessories<br><span class="amount">Rs.0.00</span></div>
+      <div class="card eme" id="emeBox" tabindex="0">Emergency<br><span class="amount">Rs.0.00</span></div>
+      <div class="card sav" id="savBox" tabindex="0">Saving<br><span class="amount">Rs.0.00</span></div>
+    </div>
+  </div>
+
+  <script>
+  (function loadJQueryAndApp() {
+    function loadApp() {
+      var s = document.createElement('script');
+      s.src = "exp6.js";
+      s.defer = true;
+      document.body.appendChild(s);
+    }
+
+    if (typeof jQuery !== 'undefined') {
+      loadApp();
+      return;
+    }
+    var local = document.createElement('script');
+    local.src = 'jquery-3.7.1.min.js';
+    local.onload = loadApp;
+    local.onerror = function () {
+      var cdn = document.createElement('script');
+      cdn.src = 'https://code.jquery.com/jquery-3.7.1.min.js';
+      cdn.onload = loadApp;
+      cdn.onerror = function () {
+        alert('Unable to load jQuery. Please place "jquery-3.7.1.min.js" in the same folder or connect to the internet.');
+      };
+      document.head.appendChild(cdn);
+    };
+    document.head.appendChild(local);
+  })();
+  </script>
+</body>
+</html>
