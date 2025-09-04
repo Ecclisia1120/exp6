@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GST Calculator</title>
+  <link rel="stylesheet" href="exp6 (2).css">
+</head>
+<body>
+  <div class="wrapper">
+    <h1 id="appTitle">GST Calculator</h1>
+
+    <form id="gstForm" aria-labelledby="appTitle" novalidate>
+      <label for="amount">Amount</label>
+      <input id="amount" name="amount" type="number" step="any" min="0" placeholder="Enter amount">
+
+      <label for="gst">GST (%)</label>
+      <select id="gst" name="gst">
+        <option value="">-- Select GST --</option>
+        <option value="3">3%</option>
+        <option value="5">5%</option>
+        <option value="12">12%</option>
+        <option value="18">18%</option>
+        <option value="28">28%</option>
+      </select>
+
+      <div class="buttons">
+        <button id="calculate" type="submit">Calculate</button>
+        <button id="reset" type="button">Clear All</button>
+      </div>
+    </form>
+
+    <h2>Results</h2>
+    <div class="results" role="region" aria-live="polite">
+      <div class="card amt" id="amtBox">Actual Amount<br><span class="value">Rs.0.00</span></div>
+      <div class="card gst" id="gstBox">GST Amount<br><span class="value">Rs.0.00</span></div>
+      <div class="card total" id="totalBox">Total Amount<br><span class="value">Rs.0.00</span></div>
+    </div>
+  </div>
+
+  <!-- jQuery loader -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="exp6 (2).js"></script>
+</body>
+</html>

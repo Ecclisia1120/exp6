@@ -1,0 +1,97 @@
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(to right, #fdfbfb, #ebedee);
+  margin: 0;
+  padding: 30px;
+}
+
+.wrapper {
+  max-width: 400px;
+  margin: auto;
+  background: #e3f2fd;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #0d47a1;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+  text-align: left;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#calculate {
+  background: #1976d2;
+  color: white;
+}
+#calculate:hover { background: #0d47a1; }
+
+#reset {
+  background: #ff7043;
+  color: white;
+}
+#reset:hover { background: #e64a19; }
+
+h2 {
+  margin: 20px 0 10px;
+  color: #333;
+}
+
+.results {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card .value {
+  display: block;
+  margin-top: 6px;
+  font-size: 18px;
+  font-weight: 800;
+  color: #222;
+}
+
+.amt { border-left: 6px solid #1976d2; }
+.gst { border-left: 6px solid #ff9800; }
+.total { border-left: 6px solid #2e7d32; }
